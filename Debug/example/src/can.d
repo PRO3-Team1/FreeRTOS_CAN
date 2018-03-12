@@ -1,5 +1,5 @@
-example/src/freertos_can.o example/src/freertos_can.d: \
- ../example/src/freertos_can.c \
+example/src/can.o example/src/can.d: ../example/src/can.c \
+ ../example/src/can.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/board.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/chip.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/lpc_types.h \
@@ -54,18 +54,9 @@ example/src/freertos_can.o example/src/freertos_can.d: \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/uda1380.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/board_api.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/lpc_types.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/lpc_phy.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/FreeRTOS.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/projdefs.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\example\inc/FreeRTOSConfig.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portable.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portmacro.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/mpu_wrappers.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/task.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/list.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/semphr.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/queue.h \
- ../example/src/io.h ../example/src/can.h
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/lpc_phy.h
+
+../example/src/can.h:
 
 C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/board.h:
 
@@ -176,27 +167,3 @@ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devki
 C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/lpc_types.h:
 
 C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/lpc_phy.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/FreeRTOS.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/projdefs.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\example\inc/FreeRTOSConfig.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portable.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portmacro.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/mpu_wrappers.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/task.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/list.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/semphr.h:
-
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/queue.h:
-
-../example/src/io.h:
-
-../example/src/can.h:

@@ -4,18 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../example/src/can.c \
 ../example/src/cr_startup_lpc40xx.c \
 ../example/src/freertos_can.c \
 ../example/src/io.c \
 ../example/src/sysinit.c 
 
 OBJS += \
+./example/src/can.o \
 ./example/src/cr_startup_lpc40xx.o \
 ./example/src/freertos_can.o \
 ./example/src/io.o \
 ./example/src/sysinit.o 
 
 C_DEPS += \
+./example/src/can.d \
 ./example/src/cr_startup_lpc40xx.d \
 ./example/src/freertos_can.d \
 ./example/src/io.d \
