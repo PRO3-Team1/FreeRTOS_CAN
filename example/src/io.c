@@ -6,6 +6,7 @@
  */
 #include "io.h"
 #include "board.h"
+
 void io_init(void) {
 
 	Chip_IOCON_PinMuxSet(LPC_IOCON, GPIO_PORT1, GPIO_PIN1, IOCON_FUNC0);
@@ -26,6 +27,9 @@ void io_init(void) {
 	/* Configure the GPIO interrupt */
 	Chip_GPIOINT_SetIntFalling(LPC_GPIOINT, GPIO_INTERRUPT_PORT,
 			1 << GPIO_INTERRUPT_PIN);
+
+	/*  */
+	NVIC_SetPriority(GPIO_INTERRUPT_NVIC_NAME, 40 + 1);
 
 	/* Enable interrupt in the NVIC */
 	NVIC_ClearPendingIRQ(GPIO_INTERRUPT_NVIC_NAME);

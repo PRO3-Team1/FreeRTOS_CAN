@@ -75,12 +75,8 @@ void vApplicationMallocFailedHook(void)
 /* FreeRTOS application idle hook */
 void vApplicationIdleHook(void)
 {
-	while(1) {
-	LPC_GPIO[GPIO_PORT4].SET |= 1UL << GPIO_PIN4;
 	/* Best to sleep here until next systick */
-	//__WFI(); // Full speed by uncommenting
-	LPC_GPIO[GPIO_PORT4].CLR |= 1UL << GPIO_PIN4;
-	}
+	__WFI(); // Full speed by uncommenting
 }
 
 /* FreeRTOS stack overflow hook */

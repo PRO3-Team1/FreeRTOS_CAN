@@ -1,7 +1,7 @@
 freertos/src/queue.o freertos/src/queue.d: ../freertos/src/queue.c \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/FreeRTOS.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/projdefs.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\example\inc/FreeRTOSConfig.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/FreeRTOS.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/projdefs.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\example\inc/FreeRTOSConfig.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/board.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/chip.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/lpc_types.h \
@@ -57,18 +57,18 @@ freertos/src/queue.o freertos/src/queue.d: ../freertos/src/queue.c \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/board_api.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/lpc_types.h \
  C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/lpc_phy.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/portable.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/portmacro.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/mpu_wrappers.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/task.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/list.h \
- C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/queue.h
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portable.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portmacro.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/mpu_wrappers.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/task.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/list.h \
+ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/queue.h
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/FreeRTOS.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/FreeRTOS.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/projdefs.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/projdefs.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\example\inc/FreeRTOSConfig.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\example\inc/FreeRTOSConfig.h:
 
 C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/board.h:
 
@@ -180,14 +180,14 @@ C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_chip_40xx\inc/
 
 C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\lpc_board_ea_devkit_4088\inc/lpc_phy.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/portable.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portable.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/portmacro.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/portmacro.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/mpu_wrappers.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/mpu_wrappers.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/task.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/task.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/list.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/list.h:
 
-C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_blinky\freertos\inc/queue.h:
+C:\Users\Emilie1\Documents\MCUXpressoIDE_10.0.2_411\workspace\freertos_CAN\freertos\inc/queue.h:
