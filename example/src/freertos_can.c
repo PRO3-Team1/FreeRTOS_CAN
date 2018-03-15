@@ -8,27 +8,42 @@
 #define QUEUESIZE 10
 
 xQueueHandle tx_queue_handle = NULL;
+xQueueHandle rx_queue_handle = NULL;
 xSemaphoreHandle btn_semaphore;
-long task_woken;
+
 
 void GPIO_IRQ_HANDLER(void) {
+	long task_woken;
 	Chip_GPIOINT_ClearIntStatus(LPC_GPIOINT, GPIO_INTERRUPT_PORT,
 			1 << GPIO_INTERRUPT_PIN);
 	xSemaphoreGiveFromISR(btn_semaphore, &task_woken);;
 }
 
+void CAN_IRQHandler(void) {
+	long task_woken;
+	uint32_t IntStatus;
+	CAN_MSG_T RcvMsgBuf;
+	IntStatus = Chip_CAN_GetIntStatus(LPC_CAN);
+	PrintCANErrorInfo(IntStatus);
+
+	if (IntStatus & CAN_ICR_RI) {
+		Chip_CAN_Receive(LPC_CAN, &RcvMsgBuf);
+		xQueueSendFromISR(rx_queue_handle, &RcvMsgBuf, &task_woken);
+	}
+}
+
 /* TX thread */
 static void vTXTask(void *pvParameters) {
-	can_tlg_t telegram;
+	CAN_MSG_T telegram;
 
 	/* fill data in TX buffer */
 	telegram.ID = 420;
 	telegram.DLC = 5;
-	telegram.data[0] = 'b';
-	telegram.data[1] = 'b';
-	telegram.data[2] = 'b';
-	telegram.data[3] = 'b';
-	telegram.data[4] = 'b';
+	telegram.Data[0] = 'a';
+	telegram.Data[1] = 'b';
+	telegram.Data[2] = 'c';
+	telegram.Data[3] = 'd';
+	telegram.Data[4] = 'e';
 
 	while (1) {
 		if (xSemaphoreTake(btn_semaphore, portMAX_DELAY)) {
@@ -40,22 +55,25 @@ static void vTXTask(void *pvParameters) {
 
 /* RX thread */
 static void vRXTask(void *pvParameters) {
+	CAN_MSG_T telegram;
 	while (1) {
-		vTaskDelay(200);
+		if (xQueueReceive(rx_queue_handle, &telegram, portMAX_DELAY)) {
+			puts("Received CAN telegram");
+			PrintCANMsg(&telegram);
+		}
 	}
 }
 
 /* CAN thread */
 static void vCANTask(void *pvParameters) {
-	can_tlg_t telegram;
+	CAN_MSG_T telegram;
+	CAN_BUFFER_ID_T TxBuf;
 	while (1) {
 		if (xQueueReceive(tx_queue_handle, &telegram, portMAX_DELAY)) {
-			printf(" RX Task got item ID = %d\n", telegram.ID);
-			printf("data 0 = %c\n", telegram.data[0]);
-			printf("data 1 = %c\n", telegram.data[1]);
-			printf("data 2 = %c\n", telegram.data[2]);
-			printf("data 3 = %c\n", telegram.data[3]);
-			printf("data 3 = %c\n", telegram.data[4]);
+			puts("Sending CAN telegram");
+			PrintCANMsg(&telegram);
+			TxBuf = Chip_CAN_GetFreeTxBuf(LPC_CAN);
+			Chip_CAN_Send(LPC_CAN, TxBuf, &telegram);
 		}
 	}
 }
@@ -69,7 +87,8 @@ int main(void) {
 	io_init();
 	can_init();
 
-	tx_queue_handle = xQueueCreate(QUEUESIZE, sizeof(can_tlg_t));
+	tx_queue_handle = xQueueCreate(QUEUESIZE, sizeof(CAN_MSG_T));
+	rx_queue_handle = xQueueCreate(QUEUESIZE, sizeof(CAN_MSG_T));
 
 	/* TX toggle thread */
 	xTaskCreate(vTXTask, (signed char * ) "vTXTask",
