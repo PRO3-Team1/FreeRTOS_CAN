@@ -37,7 +37,7 @@ static void vTXTask(void *pvParameters) {
 	CAN_MSG_T telegram;
 
 	/* fill data in TX buffer */
-	telegram.ID = 420;
+	telegram.ID = 487;
 	telegram.DLC = 5;
 	telegram.Data[0] = 'a';
 	telegram.Data[1] = 'b';
@@ -81,7 +81,7 @@ static void vCANTask(void *pvParameters) {
 int main(void) {
 	prvSetupHardware();
 
-//Setup the semaphore
+	//Setup the semaphore
 	vSemaphoreCreateBinary(btn_semaphore);
 
 	io_init();
