@@ -44,7 +44,7 @@ void PrintCANErrorInfo(uint32_t Status) {
 	if (Status & CAN_ICR_BEI) {
 		DEBUGOUT("Bus error !!!\r\n");
 		if (Status & CAN_ICR_ERRDIR_RECEIVE) {
-			DEBUGOUT("\t Error Direction: Transmiting\r\n");
+			DEBUGOUT("\t Error Direction: Transmitting\r\n");
 		} else {
 			DEBUGOUT("\t Error Direction: Receiving\r\n");
 		}
@@ -69,9 +69,10 @@ void PrintCANMsg(CAN_MSG_T *pMsg) {
 	}
 	DEBUGOUT("\r\n");
 	DEBUGOUT("\tMessage ID :0x%x\r\n", (pMsg->ID & (~CAN_EXTEND_ID_USAGE)));
+	DEBUGOUT("\tMessage Length : %d\r\n", pMsg->DLC);
 	DEBUGOUT("\tMessage Data :");
 	for (i = 0; i < pMsg->DLC; i++)
-		DEBUGOUT("%x ", pMsg->Data[i]);
+		DEBUGOUT("0x%x ", pMsg->Data[i]);
 	DEBUGOUT("\r\n\t**************************\r\n");
 }
 
