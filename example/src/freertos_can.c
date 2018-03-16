@@ -38,7 +38,7 @@ static void vTXTask(void *pvParameters) {
 
 	/* fill data in TX buffer */
 	telegram.ID = 487;
-	telegram.Type = 0;
+	telegram.Type = 0; //Very important!
 	telegram.DLC = 5;
 	telegram.Data[0] = 'a';
 	telegram.Data[1] = 'b';
